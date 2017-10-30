@@ -13,6 +13,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ColleagueType extends AbstractType
@@ -30,7 +31,10 @@ class ColleagueType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => ColleagueDTO::class
+            'data_class' => ColleagueDTO::class,
+            'empty_data' => function(FormInterface $form) {
+                return new ColleagueDTO(0, "Test", "Test@test.no", 0);
+            }
         ]);
     }
 }
