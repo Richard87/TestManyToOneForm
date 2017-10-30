@@ -32,9 +32,7 @@ class ColleagueType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => ColleagueDTO::class,
-            'empty_data' => function(FormInterface $form) {
-                return new ColleagueDTO(0, "Test", "Test@test.no", 0);
-            }
+            'empty_data' => new ColleagueDTO(0, "Test", "Test@test.no", 0)
         ]);
     }
 }
