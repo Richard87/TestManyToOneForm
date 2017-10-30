@@ -18,9 +18,7 @@ class DefaultController extends Controller
         $form = $this->createForm(ColleagueType::class);
         dump($form->getData());
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'form' => $form->createView(),
         ]);
     }
@@ -32,9 +30,7 @@ class DefaultController extends Controller
     public function testSimplePassAction() {
         $form = $this->createForm(ColleagueType::class,new ColleagueDTO(0, "Test", "test@test.com", 0));
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'form' => $form->createView(),
         ]);
     }
