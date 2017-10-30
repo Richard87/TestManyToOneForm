@@ -15,7 +15,8 @@ class DefaultController extends Controller
      * @Route("/")
      */
     public function testSimpleAction() {
-        $form = $this->createForm(CollectionType::class);
+        $form = $this->createForm(ColleagueType::class);
+        dump($form->getData());
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
