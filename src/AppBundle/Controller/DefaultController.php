@@ -8,14 +8,17 @@ use AppBundle\Forms\Signup\RegisterColleagueType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/")
      */
-    public function testSimpleAction() {
+    public function testSimpleAction(Request $request) {
         $form = $this->createForm(ColleagueType::class);
+
+        $form->handleRequest($request);
         dump($form->getData());
 
         return $this->render('default/index.html.twig', [

@@ -11,6 +11,7 @@ namespace AppBundle\Forms\Signup;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
@@ -25,6 +26,7 @@ class ColleagueType extends AbstractType
             ->add("userId", HiddenType::class)
             ->add("name", TextType::class)
             ->add("email", TextType::class)
+            ->add("save", SubmitType::class)
             ;
     }
 
